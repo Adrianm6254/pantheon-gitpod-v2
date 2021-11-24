@@ -1,0 +1,6 @@
+name: landobot-drupal9
+recipe: pantheon
+config:
+  framework: drupal8
+  site: landobot-drupal9
+  id: 3a225571-2a52-4ae9-84e7-ef54037ac66c
