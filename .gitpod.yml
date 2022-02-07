@@ -7,7 +7,8 @@ tasks:
       docker build -t devwithlando/pantheon-appserver:8.0-4 .
     command: |
       lando start
-      lando pull --code none --database dev --files dev --rsync --auth "$PANTHEON_MACHINE_TOKEN"
+      gp env
+      lando pull --auth "$PANTHEON_MACHINE_TOKEN" --code none --database dev --files dev --rsync
       gp preview $(gp url $(lando info --format=json | jq -r ".[0].urls[1]" | sed -e 's#http://localhost:\(\)#\1#'))
   
 ports:
