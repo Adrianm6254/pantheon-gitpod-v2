@@ -5,7 +5,3 @@ config:
   site: landobot-drupal9
   id: 3a225571-2a52-4ae9-84e7-ef54037ac66c
   composer_version: 2.1.2
-services:
-  appserver:
-    overrides:
-      image: 'devwithlando/pantheon-appserver:8.0-4-edge'
