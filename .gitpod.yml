@@ -3,8 +3,6 @@ image: devwithlando/gitpod-source:1
 
 tasks:
   - name:  Setup Gitpod for Pantheon + Lando
-    init: |
-      docker build -t devwithlando/pantheon-appserver:8.0-4 .
     command: |
       lando init --source cwd --recipe pantheon --pantheon-auth $PANTHEON_MACHINE_TOKEN --pantheon-site landobot-drupal9
       lando start
