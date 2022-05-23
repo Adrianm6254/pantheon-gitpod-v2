@@ -4,7 +4,7 @@ image: devwithlando/gitpod:1
 tasks:
   - name:  Setup Gitpod for Pantheon + Lando
     command: |
-      lando init --source cwd --recipe pantheon --pantheon-auth $PANTHEON_MACHINE_TOKEN --pantheon-site landobot-drupal9
+      lando init --source cwd --recipe pantheon --pantheon-auth $PANTHEON_MACHINE_TOKEN --pantheon-site gitpod-demo
       lando start
       lando pull --code none --database dev --files dev --rsync
       gp preview $(gp url $(lando info --format=json | jq -r ".[0].urls[1]" | sed -e 's#http://localhost:\(\)#\1#'))
