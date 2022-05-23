@@ -7,6 +7,7 @@ tasks:
       lando init --source cwd --recipe pantheon --pantheon-auth $PANTHEON_MACHINE_TOKEN --pantheon-site gitpod-demo
       lando start
       lando pull --code none --database dev --files dev --rsync
+      lando drush cr
       gp preview $(gp url $(lando info --format=json | jq -r ".[0].urls[1]" | sed -e 's#http://localhost:\(\)#\1#'))
   
 ports:
